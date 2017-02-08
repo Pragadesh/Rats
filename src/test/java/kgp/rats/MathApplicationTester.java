@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MathApplicationTester {
@@ -25,6 +26,7 @@ public class MathApplicationTester {
 	public void testAdd(){
 		when(calculatorService.add(20, 30)).thenReturn(50d);
 		Assert.assertEquals(50, mathApplication.add(20, 30),0);
+		verify(calculatorService).add(20, 30);
 	}
 	
 }
